@@ -13,10 +13,7 @@ namespace PrivateConstructorSettersAndEF
       AnotherValue = aString;
     }
 
-    private SomeOtherThing()
-    {
-      
-    }
+    private SomeOtherThing(){}
  
     public int AValue { get; private set; }
     public string AnotherValue { get; private set; }
