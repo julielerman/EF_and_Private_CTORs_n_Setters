@@ -4,6 +4,7 @@ using System.Linq;
 using EFDataLayer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PrivateConstructorSettersAndEF;
+using IntegrationTestHelpers;
 
 namespace TestProject
 {
