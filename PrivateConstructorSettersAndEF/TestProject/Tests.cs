@@ -27,5 +27,17 @@ namespace TestProject
         Assert.IsFalse(string.IsNullOrEmpty(thing.SomeOtherThing.AnotherValue));
       }
     }
+
+    [TestMethod]
+    public void EfCanHaneleRelationshipsWithoutExplicitIDpropertiesForForeignKey()
+    {
+        using (var context = new ThingieContext())
+        {
+            var thing = context.Things.FirstOrDefault();
+            Assert.IsNotNull(thing.Relationship);
+            Assert.AreEqual(41, thing.Relationship.Id);
+        }
+    }
+
   }
 }
