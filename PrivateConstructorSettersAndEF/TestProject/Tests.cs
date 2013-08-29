@@ -28,14 +28,15 @@ namespace TestProject
       }
     }
 
+ 
     [TestMethod]
-    public void EfCanHaneleRelationshipsWithoutExplicitIDpropertiesForForeignKey()
+    public void EfCanHandleRelationshipsWithoutExplicitIdPropertiesForForeignKey()
     {
         using (var context = new ThingieContext())
         {
-            var thing = context.Things.FirstOrDefault();
+            var thing = context.Things.Include(t=>t.Relationship).FirstOrDefault();
             Assert.IsNotNull(thing.Relationship);
-            Assert.AreEqual(41, thing.Relationship.Id);
+            Assert.AreEqual(thing.Id, thing.Relationship.Id);
         }
     }
 
