@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PrivateConstructorSettersAndEF
+﻿namespace PrivateConstructorSettersAndEF
 {
   public class AThingAsEntity
   {
@@ -21,6 +15,8 @@ namespace PrivateConstructorSettersAndEF
     public int Id { get; private set; }
     public string Description { get; private set; }
     public SomeOtherThing SomeOtherThing { get; set; }
+
+    public virtual AnotherEntity Relationship { get; set; }
 
     public void TheOtherThingMustChange(int anInt, string aString)
     {
